@@ -42,6 +42,8 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
+          provenance: false        # 关闭 provenance 证明
+          sbom: false              # 关闭 SBOM 证明
           tags: |
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:latest
             ${{ env.REGISTRY }}/${{ env.NAMESPACE }}/${{ env.IMAGE_NAME }}:sha-${{ github.sha }}
